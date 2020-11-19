@@ -2,18 +2,10 @@ require('dotenv').config();
 // TELEGRAF BOT & TOKEN
 const {bot} = require('./config/telegram/telegraf');
 
-
-
-
-
 //commands
 const {launch,start,setForForwarding} = require('./bot_service/commands');
 start(bot);
 setForForwarding(bot);
-
-//hears
-const {addMainGroup} = require('./bot_service/hears');
-addMainGroup(bot);
 
 //on
 const {documentHtml} = require('./bot_service/on');
