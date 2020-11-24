@@ -16,7 +16,8 @@ const {useSession} = require('./bot_service/use');
 useSession(bot)
 
 
-
+// const {google:{client}} = require('./config');
+// client.googleSheetAddUser('name:Vasya')
 // bot_launch
 try {
     launch(bot);

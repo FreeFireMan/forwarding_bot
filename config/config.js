@@ -9,5 +9,9 @@ module.exports = {
     //     HOST : process.env.DB_HOST,
     //     DIALECT : process.env.DB_DIALECT,
     // },
+    GOOGLE:{
+        SPREADSHEETID: process.env.SPREADSHEETID,
+        RANGE: process.env.RANGE,
+    },
 
 }
