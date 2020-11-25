@@ -14,7 +14,7 @@ class UserService {
     createUser(userObj) {
 
         try {
-            console.log(userObj);
+            // console.log(userObj);
             return googleAuthUtil.authorize()
                 .then(autClient => {
                     const sheets = google.sheets({version: 'v4', auth: autClient});
@@ -46,7 +46,7 @@ class UserService {
 
     logUserFileSending(userObj) {
         try {
-            console.log(userObj);
+            // console.log(userObj);
             return googleAuthUtil.authorize()
                 .then(autClient => {
                     const sheets = google.sheets({version: 'v4', auth: autClient});
@@ -86,6 +86,26 @@ class UserService {
                     return await sheets.spreadsheets.values.get({
                         spreadsheetId: GOOGLE.SPREADSHEETID,
                         range: GOOGLE.COLUMN_LIST2_1,
+                    }).then(response => {
+                        const {data: {values}} = response
+                        return !!values.find(value => +value[0] === id)
+                    })
+                })
+        } catch (e) {
+            console.log(e);
+            // throw new ControllerError("MY MSG ERORR: " + e, 500, 'userService/createUser')
+        }
+    }
+    isAdmin(id) {
+
+        try {
+            // console.log(id);
+            return googleAuthUtil.authorize()
+                .then(async autClient => {
+                    const sheets = google.sheets({version: 'v4', auth: autClient});
+                    return await sheets.spreadsheets.values.get({
+                        spreadsheetId: GOOGLE.SPREADSHEETID,
+                        range: GOOGLE.COLUMN_LIST3_1,
                     }).then(response => {
                         const {data: {values}} = response
                         return !!values.find(value => +value[0] === id)

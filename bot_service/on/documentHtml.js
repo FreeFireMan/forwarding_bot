@@ -19,6 +19,7 @@ module.exports =  (bot) => {
             || mime_type === mimeType.TEXT_CSS
             || mime_type === mimeType.APPLICATION_RAR
             || mime_type === mimeType.APPLICATION_ZIP
+            || mime_type === mimeType.APPLICATION_RAR_VND
         ) {
 
             userService.logUserFileSending(userObj)
@@ -28,6 +29,9 @@ module.exports =  (bot) => {
                 console.log(err);
                 ctx.reply('file is NOT forwarding')
             })
+        }else{
+            console.log(ctx.message);
+            ctx.reply('file is not accessing')
         }
 
     });
