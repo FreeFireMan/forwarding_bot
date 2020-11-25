@@ -8,17 +8,18 @@ start(bot);
 setForForwarding(bot);
 
 //on
-const {documentHtml} = require('./bot_service/on');
+const {documentHtml, contact} = require('./bot_service/on');
+contact(bot)
 documentHtml(bot);
 
 // bot_use
 const {useSession} = require('./bot_service/use');
 useSession(bot)
 
-
+//
 // const {google:{client}} = require('./config');
-// client.googleSheetAddUser('name:Vasya')
-// bot_launch
+// client.apiStart()
+// // bot_launch
 try {
     launch(bot);
 }catch (e) {

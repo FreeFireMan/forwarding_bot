@@ -11,5 +11,16 @@ module.exports = {
                 [{text: "Скасувати ❌"}]
             ]
         }
+    },
+     contact: {
+        reply_markup: {
+            one_time_keyboard: true,
+            keyboard: [[{
+                text: "Надіслати контактні дані ✔️",
+                request_contact: true
+            }], [{
+                text: "Скасувати ❌",
+            }]]
+        }
     }
 }

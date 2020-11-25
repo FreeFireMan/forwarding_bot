@@ -11,7 +11,9 @@ module.exports = {
     // },
     GOOGLE:{
         SPREADSHEETID: process.env.SPREADSHEETID,
-        RANGE: process.env.RANGE,
+        RANGE1: process.env.RANGE_LIST1,
+        RANGE2: process.env.RANGE_LIST2,
+        COLUMN_LIST2_1: process.env.RANGE_LIST2_FIRST_COLUMN,
     },
 
 }
