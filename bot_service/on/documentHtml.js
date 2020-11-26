@@ -35,7 +35,7 @@ module.exports = (bot) => {
                 ctx.reply('file is not accessing')
             }
         }else{
-            ctx.reply('Ви повинні доти свій контакт, кнопка знизу')
+            ctx.reply('Ви повинні дати свій контакт, кнопка знизу')
         }
 
     });

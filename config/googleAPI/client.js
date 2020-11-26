@@ -19,12 +19,6 @@ let TOKEN_PATH = TOKEN_DIR + `${gSheet}`;
 // Single instance variable
 let oAuth2Client = null;
 
-/**
- * Create an OAuth2 client with the given credentials, and then execute the
- * given callback function.
- * @param {Object} credentials The authorization client credentials.
- * @param {function} callback The callback to call with the authorized client.
- */
 function authorize() {
     return new Promise((resolve, reject) => {
         if (null === oAuth2Client) {
