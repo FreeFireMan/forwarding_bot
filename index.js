@@ -4,18 +4,20 @@ const {bot} = require('./config/telegram/telegraf');
 
 // bot_use
 const {useSession,useScene} = require('./bot_service/use');
-useSession(bot)
-useScene(bot)
+useSession(bot);
+useScene(bot);
 
 //commands
-const {launch,start,setForForwarding,sendingMessage} = require('./bot_service/commands');
+const {launch,start,help,setForForwarding,sendingMessage} = require('./bot_service/commands');
+
 start(bot);
+help(bot);
 setForForwarding(bot);
 sendingMessage(bot);
 
 //on
 const {documentHtml, contact} = require('./bot_service/on');
-contact(bot)
+contact(bot);
 documentHtml(bot);
 
 // bot_launch

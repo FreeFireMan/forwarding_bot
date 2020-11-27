@@ -26,7 +26,7 @@ async function secondStep(ctx) {
     try {
 
         const allUsers = await userService.getIdAllUsers()
-        ctx.reply('Почав росилку')
+        ctx.reply('Почав розсилку')
         console.log('-----------------------------------------------------------------');
         console.log(allUsers);
         allUsers.forEach(async id =>{
