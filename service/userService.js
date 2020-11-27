@@ -97,7 +97,6 @@ class UserService {
         }
     }
     isAdmin(id) {
-
         try {
             // console.log(id);
             return googleAuthUtil.authorize()
@@ -109,6 +108,28 @@ class UserService {
                     }).then(response => {
                         const {data: {values}} = response
                         return !!values.find(value => +value[0] === id)
+                    })
+                })
+        } catch (e) {
+            console.log(e);
+            // throw new ControllerError("MY MSG ERORR: " + e, 500, 'userService/createUser')
+        }
+    }
+
+    getIdAllUsers() {
+
+        try {
+            // console.log(userObj);
+            return googleAuthUtil.authorize()
+                .then(async autClient => {
+                    const sheets = google.sheets({version: 'v4', auth: autClient});
+                    return await sheets.spreadsheets.values.get({
+                        spreadsheetId: GOOGLE.SPREADSHEETID,
+                        range: GOOGLE.COLUMN_LIST2_1,
+                    }).then(response => {
+                        const {data: {values}} = response
+
+                        return values.map(value => value[0]).slice(1)
                     })
                 })
         } catch (e) {

@@ -3,6 +3,7 @@
 module.exports = async (ctx, next) => {
     try {
         if (ctx.update.message.chat.type === 'private') {
+            console.log('i here');
             next();
         } else {
             await ctx.reply('Це не приватний чат із ботом 🙂\nНапишіть боту в особисті повідомлення, дякуємо!');
