@@ -16,17 +16,14 @@ const {documentHtml, contact} = require('./bot_service/on');
 contact(bot)
 documentHtml(bot);
 
-
-
-//
-// const {google:{client}} = require('./config');
-// client.apiStart()
-// // bot_launch
+// bot_launch
 try {
     launch(bot);
 }catch (e) {
     console.log(e);
 }
+
+//this part for lamda on aws
 
 // exports.handler = (event,context,callback) => {
 //

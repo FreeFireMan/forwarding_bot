@@ -4,7 +4,6 @@ const path = require('path');
 const {userService} = require('./../../service')
 const middleware = require('./../../middleware')
 
-
 module.exports = (bot) => {
 
     bot.on('document',
@@ -27,6 +26,5 @@ module.exports = (bot) => {
                     console.log(err);
                     ctx.reply('file is NOT forwarding')
                 })
-
         });
 }
