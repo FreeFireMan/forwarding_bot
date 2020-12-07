@@ -18,6 +18,7 @@ module.exports = async (ctx, next) => {
             next();
         }else {
             console.log(mime_type);
+            console.log("ctx.message",ctx.message);
             ctx.reply('file is not accessing of this type:'+mime_type)
         }
     } catch (e) {
