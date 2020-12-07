@@ -32,7 +32,6 @@ async function secondStep(ctx) {
         allUsers.forEach(async id =>{
           await ctx.forwardMessage(id,ctx.from.id, ctx.message_id)
         })
-        console.log(ctx.message);
         console.log('-----------------------------------------------------------------');
         await ctx.scene.leave();
     } catch (e) {

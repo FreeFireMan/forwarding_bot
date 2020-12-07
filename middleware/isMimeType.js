@@ -12,6 +12,8 @@ module.exports = async (ctx, next) => {
             || mime_type === mimeType.APPLICATION_RAR
             || mime_type === mimeType.APPLICATION_ZIP
             || mime_type === mimeType.APPLICATION_RAR_VND
+            || mime_type === mimeType.APPLICATION_ZIP_COM
+            || mime_type === mimeType.APPLICATION_ZIP_TAR
         ) {
             next();
         }else {
