@@ -3,6 +3,7 @@
 const {google:{client: googleAuthUtil}} = require('./../config')
 const {google} = require('googleapis');
 const {GOOGLE} = require('./../config/config');
+const db = require('./../database').getInstance()
 
 
 class UserService {
@@ -15,6 +16,12 @@ class UserService {
 
         try {
             // console.log(userObj);
+            db.getModel('user').create(userObj)
+                .then(res => {
+                    console.log('------------------------');
+                    console.log(res);
+                    console.log('------------------------');
+                })
             return googleAuthUtil.authorize()
                 .then(autClient => {
                     const sheets = google.sheets({version: 'v4', auth: autClient});

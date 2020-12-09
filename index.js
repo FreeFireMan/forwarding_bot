@@ -1,4 +1,6 @@
 require('dotenv').config();
+const db = require('./database').getInstance()
+db.setModels()
 // TELEGRAF BOT & TOKEN
 const {bot} = require('./config/telegram/telegraf');
 
