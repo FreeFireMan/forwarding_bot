@@ -1,6 +1,6 @@
 require('dotenv').config();
-const db = require('./database').getInstance()
-db.setModels()
+// const db = require('./database').getInstance()
+// db.setModels()
 // TELEGRAF BOT & TOKEN
 const {bot} = require('./config/telegram/telegraf');
 
@@ -18,9 +18,11 @@ setForForwarding(bot);
 sendingMessage(bot);
 
 //on
-const {documentHtml, contact} = require('./bot_service/on');
+const {contact,checkDocument} = require('./bot_service/on');
 contact(bot);
-documentHtml(bot);
+checkDocument(bot);
+// documentHtml(bot);
+
 
 // bot_launch
 try {

@@ -1,6 +1,7 @@
 module.exports = {
     TG:{
         TOKEN :  process.env.TG_TOKEN,
+        REPORT_CHANNEL :  process.env.TG_REPORT_CHANNEL,
     },
     DB:{
         NAME : process.env.DB_NAME,
