@@ -27,13 +27,22 @@ async function secondStep(ctx) {
 
         const allUsers = await userService.getIdAllUsers()
         ctx.reply('Почав розсилку')
-        console.log('-----------------------------------------------------------------');
-        console.log(allUsers);
-        allUsers.forEach(async id =>{
-          await ctx.forwardMessage(id,ctx.from.id, ctx.message_id)
-        })
-        console.log('-----------------------------------------------------------------');
+
+        console.log('-------------------forwardMessage----------------------------------------------');
+        for (let i = 0; i< allUsers.length; i++){
+            try {
+
+                await ctx.forwardMessage(allUsers[i],ctx.from.id, ctx.message_id)
+
+            } catch (e) {
+
+                console.error('this id not valid '+allUsers[i]+'\n',e);
+            }
+        }
+        console.log('-------------------forwardMessage----------------------------------------------');
+
         await ctx.scene.leave();
+
     } catch (e) {
         console.log(`My error in scenes_sendingMessageForAll_2\n${e.message}`);
     }

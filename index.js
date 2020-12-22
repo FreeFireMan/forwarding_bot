@@ -21,8 +21,11 @@ sendingMessage(bot);
 const {contact,checkDocument} = require('./bot_service/on');
 contact(bot);
 checkDocument(bot);
-// documentHtml(bot);
 
+
+// catch errors
+const {catchError} = require('./bot_service/catch');
+catchError(bot)
 
 // bot_launch
 try {
@@ -34,7 +37,6 @@ try {
 //this part for lamda on aws
 
 // exports.handler = (event,context,callback) => {
-//
 //
 //     bot.handleUpdate(event);
 //     return callback(null, {
